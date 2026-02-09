@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from statsmodels.tsa.stattools import adfuller
 import os
-
 def load_data(file_path):
     """Loads CSV data with error handling."""
     if not os.path.exists(file_path):
@@ -13,13 +12,11 @@ def load_data(file_path):
     df.sort_values('Date', inplace=True)
     df.set_index('Date', inplace=True)
     return df
-
 def compute_features(df):
     """Calculates returns and rolling stats."""
     df['Log_Returns'] = np.log(df['Price']).diff()
     df['Rolling_Mean'] = df['Price'].rolling(window=252).mean()
     return df
-
 def run_stationarity_tests(df):
     """Performs ADF test on Price and Returns."""
     results = {}
@@ -28,7 +25,6 @@ def run_stationarity_tests(df):
         res = adfuller(series)
         results[col] = {'adf': res[0], 'p-value': res[1]}
     return results
-
 if __name__ == "__main__":
     try:
         data = load_data('data/BrentOilPrices.csv')

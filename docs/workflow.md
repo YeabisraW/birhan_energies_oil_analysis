@@ -1,5 +1,7 @@
 Project Workflow & Analysis Framework
+
 1. Project Overview
+
 This project analyzes the impact of significant geopolitical and economic events on Brent Crude oil prices. The objective is to move beyond simple price tracking and into quantifying structural shifts in the market using Bayesian inference.
 
 2. Research & Data Strategy
@@ -28,7 +30,6 @@ mu_1 & mu_2: The average log-returns (or price) before and after the shift.Uncer
 5. Communication & Stakeholder Insights
 
 To ensure the analysis is actionable, insights will be communicated as follows:
-
 Stakeholder,Communication Channel,Key Focus
 Investors,Quarterly Reports / Dashboards,Risk exposure and volatility regimes.
 Policymakers,Policy Briefings,Impact of sanctions and production quotas on stability.
