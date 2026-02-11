@@ -1,5 +1,34 @@
-venv/
+# Python
 __pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+*.sqlite3
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Node / React
+node_modules/
+build/
+dist/
+*.log
+npm-debug.log*
+
+# OS files
 .DS_Store
-.env
-data/*.csv
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Dashboards / plots
+*.png
+*.jpg
+*.jpeg
+*.gif
