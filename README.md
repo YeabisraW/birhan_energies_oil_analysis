@@ -15,14 +15,19 @@ ARIMA(1,1,1): Achieved a Mean Absolute Error (MAE) of $2.64, providing Birhan En
 GARCH(1,1): Detected a Volatility Persistence (beta) of 0.9051.
 Strategic Insight: Because beta > 0.90, market "shocks" take a significant amount of time to decay. The company should expect high-risk conditions to persist for weeks following any major geopolitical event.
 
+# Dashboard Architecture
+The project includes a full-stack interactive dashboard:
+Backend: Flask API serving Brent Oil data and geopolitical event markers.
+Frontend: React with Recharts for high-fidelity, interactive time-series visualization.
+Features: Live status connectivity, KPI metrics (MAE/RMSE), and hover-interactive event tooltips.
 # Project Structure
-data/: Geopolitical events ledger (oil_events.csv) and raw price data.
-scripts/:
-bayesian_modeling.py: MCMC sampling for regime shifts.
-arima_forecast.py: Predictive price modeling.
-volatility_analysis.py: GARCH risk assessment.
-docs/: Comprehensive workflow, results documentation, and visualization exports.
-
+birhan_energies_oil_analysis/
+├── data/                  # Raw BrentOilPrices.csv and event ledger
+├── scripts/               # Statistical modeling scripts (PyMC, GARCH)
+├── dashboard/             
+│   ├── backend/           # Flask app.py and API logic
+│   └── frontend/          # React App.js and UI components
+└── docs/                  # Visualization exports and Interim Reports
 # Setup & Installation
 
 1. Clone the repository:
@@ -38,4 +43,21 @@ pip install pandas numpy matplotlib pymc arviz statsmodels arch
 python scripts/arima_forecast.py
 
 
-📈 Stakeholder ImpactBy combining regime-shift detection with volatility persistence modeling, this analysis allows Birhan Energies to:Optimize Procurement: Use the ARIMA forecast to timing fuel purchases within a $\pm \$2.64$ confidence window.Manage Risk: Use GARCH insights to adjust hedge positions during high-volatility "clusters."
+4. Launch Backend (Flask)
+```bash
+cd dashboard/backend
+pip install flask flask-cors pandas
+python app.py
+
+5. Launch Frontend (React)
+```bash
+cd dashboard/frontend
+npm install axios recharts
+npm start
+
+
+📈 Stakeholder Impact
+By combining regime-shift detection with volatility persistence modeling, Birhan Energies can:
+Optimize Procurement: Time fuel purchases within a pm $2.64 confidence window based on ARIMA forecasts.
+Manage Risk: Use GARCH insights to identify "Volatility Clusters," adjusting hedge positions when persistence (beta) exceeds 0.9.
+Operational Planning: Differentiate between "Noise" and "Regime Shifts" using Bayesian change-point logic.
