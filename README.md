@@ -56,6 +56,15 @@ npm install axios recharts
 npm start
 
 
+## 🔍 Bayesian Regime Shift Analysis
+The Bayesian Discrete Uniform model successfully identified a structural break in the Brent Oil market.
+
+* **Break Date Detected:** 2014-11-13 (Correlates with the 2014 Global Supply Glut/OPEC Policy Shift).
+* **Regime 1 Mean (Pre-Crash):** $103.57
+* **Regime 2 Mean (Post-Crash):** $53.97
+* **Quantitative Impact:** A **-47.89%** structural shift in price baseline.
+* **Convergence Diagnostics:** Achieved an **R-hat of 1.0**, confirming that the MCMC sampling has fully converged and the results are statistically robust.
+
 📈 Stakeholder Impact
 By combining regime-shift detection with volatility persistence modeling, Birhan Energies can:
 Optimize Procurement: Time fuel purchases within a pm $2.64 confidence window based on ARIMA forecasts.
